@@ -75,6 +75,7 @@ if options.redis_save_method
 end
 
 backup_filename = "%s-dump.rdb" % [ DateTime.parse(`date`).strftime("%Y-%m-%d-%H-%M-%S") ]
+backup_filename = "%s_%s" % [`hostname`.chomp, backup_filename] if options.use_hostname
 backup_rdb_file = "%s/%s" % [ options.backup_dir, backup_filename ]
 backup_file = backup_rdb_file
 

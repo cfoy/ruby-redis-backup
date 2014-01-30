@@ -38,6 +38,7 @@ module RedisBackup
         opts.on('-B', '--s3-bucket S3_BUCKET', 'Name of bucket to use on S3') { |bucket| options.s3_bucket = bucket }
         opts.on('-C', '--s3-clean', 'Cleanup intermediate backup files') { |dir| options.clean = true }
         opts.on('-S', '--s3-secret-access-key S3_SECRET_ACCESS_KEY', 'Your secret_access_key for AWS S3') { |secret| options.s3_secret_access_key = secret }
+        opts.on('-i', '--use-hostname', 'Prepend hostname to backup filename') { |use_hostname| options.use_hostname = true }
 
         opts.separator ""
         opts.separator "Common options:"
